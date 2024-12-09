@@ -172,41 +172,15 @@ func getRandomKey() []byte {
 	return k
 }
 
-func getRandomKeyByRange10byte() []byte { // 73,74,76 exclude 75
-	// defer timer("getRandomKeyByRange10byte")()
-	//                                             109.8.7.6.5.4.3.2.1. // byte 0x00 - 0xff
-	// 0000000000000000000000000000000000000000000001000000000000000000 // 73 range1
-	// 0000000000000000000000000000000000000000000001ffffffffffffffffff //
-	// 0000000000000000000000000000000000000000000002000000000000000000 // 74
-	// 0000000000000000000000000000000000000000000003ffffffffffffffffff //
-	// 0000000000000000000000000000000000000000000004000000000000000000 // 75 Solved range3
-	// 0000000000000000000000000000000000000000000007ffffffffffffffffff //
-	// 0000000000000000000000000000000000000000000008000000000000000000 // 76 range4
-	// 000000000000000000000000000000000000000000000fffffffffffffffffff //
-	// 0000000000000000000000000000000000000000000010000000000000000000 // 77
-	// 000000000000000000000000000000000000000000001fffffffffffffffffff //
-	// 0000000000000000000000000000000000000000000020000000000000000000 // 78
-	// 000000000000000000000000000000000000000000003fffffffffffffffffff //
-	// 0000000000000000000000000000000000000000000040000000000000000000 // 79
-	// 000000000000000000000000000000000000000000007fffffffffffffffffff //
-	// 0000000000000000000000000000000000000000000080000000000000000000 // 80 Solved range8
-	// 00000000000000000000000000000000000000000000ffffffffffffffffffff // range9
+func getRandomKeyByRange3byte() []byte {
+	r := make([]byte, 29, 32)
+	k := make([]byte, 3)
 
-	r := make([]byte, 22, 32)
-	k := make([]byte, 10)
-
-	for {
-		_, err := rand.Read(k)
-		if err != nil {
-			log.Fatalf("error while generating random string: %s", err)
-			break
-		}
-		if (k[0] >= range8 && k[0] < range9) || (k[0] >= range3 && k[0] < range4) { // exclude solved (10th byte)
-			// log.Printf("Ignored key: %x", k)
-			continue
-		}
-		break
+	_, err := rand.Read(k)
+	if err != nil {
+		log.Fatalf("error while generating random string: %s", err)
 	}
+
 	r = append(r, k...)
 	// log.Printf("Key: %x", r)
 	return r
@@ -240,7 +214,7 @@ func main() {
 	for {
 		// key := getKnownKey()
 		// key := getRandomKey()
-		key := getRandomKeyByRange10byte()
+		key := getRandomKeyByRange3byte()
 		// key, _ := hex.DecodeString("00000000000000000000000000000000000000000000005906a7d53cdab02d94")
 		// log.Printf("Key is %x\n", key)
 		pubkey := getPubKey(key)

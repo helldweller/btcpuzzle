@@ -150,3 +150,20 @@ Simple mvp go app for puzzles 65 - 72 exclude solved 65,66,70
 
     🔑Private Key
     0xea1a5c66dcc11b5ad180
+
+
+## 3byte_key
+
+For testing purposes
+
+Solved puzzles 17-24
+
+    puzzle, key range, key, addr
+    17 010000-01ffff 0x01764f 1HduPEXZRdG26SUT5Yk83mLkPyjnZuJ7Bm
+    18 020000-03ffff 0x03080d 1GnNTmTVLZiqQfLbAdp9DVdicEnB5GoERE
+    19 040000-07ffff 0x05749f 1NWmZRpHH4XSPwsW6dsS3nrNWfL1yrJj4w
+    20 080000-0fffff 0x0d2c55 1HsMJxNiV7TLxmoF6uJNkydxPFDog4NQum
+    21 100000-1fffff 0x1ba534 14oFNXucftsHiUMY8uctg6N487riuyXs4h
+    22 200000-3fffff 0x2de40f 1CfZWK1QTQE3eS9qn61dQjV89KDjZzfNcv
+    23 400000-7fffff 0x556e52 1L2GM8eE7mJWLdo3HZS6su1832NX2txaac
+    24 800000-ffffff 0xdc2a04 1rSnXMr63jdCuegJFuidJqWxUPV7AtUf7
