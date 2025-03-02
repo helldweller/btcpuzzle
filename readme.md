@@ -6,13 +6,16 @@ https://btcpuzzle.info/puzzlelist
 ## TODO
 
  - perfomance metrics
- - telegram notify
  - threads for 100% cpu usage
+ - add key to wif format import for electrum
+ - telegram notify
+ - aes-256-cbc crypto for telegram
  - GPU usage
  - electrum sidecar
    - check balance
-   - make transaction if found key
- - tor sidecar for privacy
+   - import key
+   - make transaction
+ - tor sidecar for privacy https://hub.docker.com/r/dperson/torproxy
  - k8s manifests
  - split app via nsq (separate workers for key gen and so on)
 
@@ -22,7 +25,7 @@ Simple mvp go app for puzzles 65 - 72 exclude solved 65,66,70
 
     65 Solved
     66 Solved
-    67 1BY8GQbnueYofwSuFAT3USAhGjPrkxDdW9 6.70010696 BTC
+    67 Solved
     68 1MVDYgVaSN6iKKEsbzRUAYFrYJadLYZvvZ 6.80005314 BTC
     69 19vkiEajfhuZ8bs8Zu2jgmC6oqZbWqhxhG 6.90013061 BTC
     70 Solved
